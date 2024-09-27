@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Jack</title>
+    <link rel="stylesheet" href="styleprojects.css">
+    <link rel="stylesheet" href="generalstyles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <!-- Logo on the left -->
+            <div class="logo"> 
+                <h1>JD</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="header-section">
+        <h1 class="hollow-text">Past Projects</h1>
+    </section>
+
+
+    
+
+    <!-- Slideshow Section -->
+    <section class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="Images/Project1.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="Images/project2.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="Images/project3.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="Images/project4.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="Images/project5.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="Images/project6.png" style="width:100%">
+        </div>
+        <a class="prev" onclick="changeSlides(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlides(1)">&#10095;</a>
+        <div class="dots-container" style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+    </section>
+
+    <!-- Header Section -->
+<div class="header-section">
+    <h1 class="hollow-text">Image Gallary</h1>
+    <p class="header-subtext">Click on images to expand </p>
+</div>
+
+
+    <!-- Project Descriptions -->
+    <div class="project-descriptions">
+        <div class="project-item" onclick="openModal('Images/Project1.png')">
+            <h3>FoodTech Website 2023</h3> 
+            <img src="Images/Project1.png" alt="Project 1">
+            <p>This project showcases a user-friendly website designed ro showcase the work produced by SKC food technology students. It highlights the integration of modern web design principles, responsive layouts, and features such as an online menu, a blog section for food-related articles, and a contact form for customer inquiries.</p>
+        </div>
+        <div class="project-item" onclick="openModal('Images/project2.png')">
+            <h3>Product Design 2023</h3> 
+            <img src="Images/project2.png" alt="Project 2">
+            <p>In this project, the focus is on the design and presentation innovative tech products made by students at SKC in the product design classes. The image illustrates detailed sketches, 3D models, and prototypes, showcasing the iterative design process. Emphasis is placed on user experience, functionality, and aesthetic appeal to ensure market competitiveness.</p>
+        </div>
+        <div class="project-item" onclick="openModal('Images/project3.png')">
+            <h3>Homepage tech exhibit 2023</h3> 
+            <img src="Images/project3.png" alt="Project 3">
+            <p>This project represents a homepage design for a technology exhibition. The image features a vibrant layout that captures the essence of innovation and technology. Key elements include highlighted exhibitors, event schedules, and interactive sections to engage visitors and encourage participation in the exhibition.
+            </p>
+        </div>
+        <div class="project-item" onclick="openModal('Images/project4.png')">
+            <h3>Slime Maze Development</h3> 
+            <img src="Images/project4.png" alt="Project 4">
+            <p>This project focuses on the development of a game called "Slime Maze." The image shows the design of various levels, featuring colorful graphics and engaging gameplay mechanics. The project highlights the programming and artistic elements involved in creating a fun and interactive gaming experience.</p>
+        </div>
+        <div class="project-item" onclick="openModal('Images/project5.png')">
+            <h3>Slime Maze Pixel Editing</h3> 
+            <img src="Images/project5.png" alt="Project 5">
+            <p>This project involves pixel art design for the "Slime Maze" game. The image illustrates the pixel editing process, showcasing the creation of unique characters and environments. Attention to detail in color selection and design ensures that each element contributes to the game's overall aesthetic.</p>
+        </div>
+        <div class="project-item" onclick="openModal('Images/project6.png')">
+            <h3>Slime Maze Opening Screen</h3> 
+            <img src="Images/project6.png" alt="Project 6">
+            <p>This project presents the opening screen design for "Slime Maze." The image captures the colorful and inviting atmosphere of the game, featuring the main character and title. The design is aimed at attracting players’ attention and creating an engaging first impression that invites them to explore the maze.</p>
+        </div>
+    </div>
+
+    <!-- Modal for Full-Size Images -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jack Doherty. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to toggle the navigation menu on small screens
+        const hamburger = document.querySelector('.hamburger');
+        const navUL = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', () => {
+            navUL.classList.toggle('show');
+        });
+
+        // JavaScript for the Slideshow
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" activedot", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " activedot";
+        }
+
+        // Modal functionality
+        function openModal(imageSrc) {
+            var modal = document.getElementById("myModal");
+            var modalImage = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImage.src = imageSrc;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+
+    <style>
+        /* Slideshow Container */
+        .slideshow-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        /* Slide Styles */
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: auto;
+            max-height: 500px; /* Max height for consistency */
+            object-fit: contain; /* Ensures the entire image is visible */
+        }
+
+        /* Dots/Indicators */
+        .dots-container {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #111827;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .activedot, .dot:hover {
+            background-color: #40d49c; /* Muted red for active dot */
+        }
+
+        /* Project Descriptions Styles */
+        .project-descriptions {
+            display: flex; /* Flex layout for project items */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            justify-content: center; /* Center the items */
+            margin: 40px 0; /* Space above and below */
+        }
+
+        .project-item {
+            flex: 1 1 100%; /* Each item takes full width on smaller screens */
+            margin: 20px; /* Space between items */
+            background-color: #111827; /* White background for items */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            overflow: hidden; /* Prevent overflow */
+            text-align: center; /* Center text */
+            padding: 15px; /* Padding inside the boxes */
+            color: #f8fafc;
+            font-size: 1.3em;
+        }
+
+        /* Set fixed height for images */
+        .project-item img {
+            width: 100%; /* Full width of item */
+            height: 200px; /* Set a fixed height */
+            object-fit: cover; /* Ensure the image covers the space */
+            border-radius: 5px; /* Rounded corners for images */
+            box-sizing: border-box; /* Include padding/border in element's total width and height */
+        }
+
+        /* Media query for medium screens (768px to 1024px) */
+        @media (min-width: 768px) {
+            .project-item {
+                flex: 1 1 45%; /* Two items per row */
+            }
+        }
+
+        /* Media query for large screens (1024px and above) */
+        @media (min-width: 1024px) {
+            .project-item {
+                flex: 1 1 30%; /* Three items per row */
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .slideshow-container {
+                max-width: 100%; /* Adjusts slideshow screen width for larger screens */
+            }
+
+            .mySlides img {
+                max-height: 300px; /* Adjust height for smaller screens */
+                object-fit: contain; /* Ensures the entire image is visible */
+            }
+        }
+
+        /* Slideshow Navigation Styles */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -50px;
+            margin-left: 25px;
+            margin-right: 25px;
+            padding: 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 25px;
+            transition: 0.6s ease;
+            border-radius: 5px;
+            user-select: none;
+            background-color: black;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 5px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8); /* Darken the background on hover */
+        }
+
+        /* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2000; /* Ensure the modal is on top of all elements */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    margin-top: 0px;
+}
+
+/* Header Section */
+.header-section {
+    margin-top: 80px; /* Adjust to avoid overlapping */
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    margin-top: 100px; /* Ensure no overlap with header */
+}
+
+
+
+/* Slideshow Navigation Styles */
+.prev, .next {
+    z-index: 1; /* Lower than modal */
+}
+
+
+
+
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            height: auto;
+            z-index: 1;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #40d49c;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            z-index: 1;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #40d49c; /* Change color on hover */
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>

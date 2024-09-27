@@ -1,0 +1,103 @@
+body {
+    background-color: #f8fafc; /* Sets the entire page background to white */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-family: Arial, sans-serif; /* Optional: Choose a font */
+}
+
+
+
+.header-section {
+    background-color: #f8fafc; /* Background color of the header */
+    text-align: center; /* Center the text */
+    padding: 50px 20px; /* Padding for spacing */
+}
+
+.hollow-text {
+    font-size: 4em; /* Adjust font size as needed */
+    color: transparent; /* Make text transparent */
+    -webkit-text-stroke: 2.2px #111827; /* Outline the text with the specified color */
+    margin: 0; /* Remove default margin */
+    transition: color 0.3s ease; /* Transition for smooth effect */
+    margin-top: 50px;
+}
+
+.hollow-text:hover {
+    color: #111827; /* Change the text color on hover */
+}
+
+.header-subtext {
+    font-size: 1.5rem; /* Subtext font size */
+    color: #40d49c; /* Text color */
+    margin-top: 10px; /* Margin for spacing */
+}
+
+/* Media query for medium screens (768px to 1024px) */
+@media (min-width: 768px) {
+    .hollow-text {
+        font-size: 5rem; /* Smaller font size */
+    }
+}
+
+/* Media query for small screens (up to 768px) */
+@media (max-width: 768px) {
+
+    .hollow-text {
+        font-size: 3rem; /* Even smaller font size */
+    }
+}
+
+
+
+
+
+
+.project-item {
+    flex: 1 1 100%; /* Each item takes full width on smaller screens */
+    margin: 20px; /* Space between items */
+    background-color: #111827; /* White background for items */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Prevent overflow */
+    text-align: center; /* Center text */
+    padding: 15px; /* Padding inside the boxes */
+}
+
+/* Adding padding to the image */
+.project-item img {
+    width: 100%; /* Full width of item */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
+    padding: 10px; /* Padding around the image */
+    box-sizing: border-box; /* Ensures padding does not increase width */
+    cursor: pointer;
+}
+
+/* Media query for medium screens (768px to 1024px) */
+@media (min-width: 768px) {
+    .project-item {
+        flex: 1 1 45%; /* Two items per row */
+    }
+}
+
+/* Media query for large screens (1024px and above) */
+@media (min-width: 1024px) {
+    .project-item {
+        flex: 1 1 30%; /* Three items per row */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slideshow-container {
+        max-width: 100%; /* Adjusts slideshow screen width for larger screens */
+    }
+
+    .mySlides img {
+        max-height: 300px; /* Adjust height for smaller screens */
+        object-fit: contain; /* Ensures the entire image is visible */
+    }
+}
+
+
+
